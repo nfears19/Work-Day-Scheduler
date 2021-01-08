@@ -19,15 +19,23 @@
   var saveValue = localStorage.getItem("TextField9am")
 
   //The function for the save button
-  function saveButton() {
-    console.log(this.siblings)
-    var input = document.getElementById("TextField9am").value;
-    localStorage.setItem("9AM", input);
-    document.getElementById("TextField9am").value = localStorage.getItem("9AM");
-    var testStorage = localStorage.getItem("9AM");
+  function saveButton(num) { //Passing a number we're going to use to determine the time
+    //console.log(this.siblings)
+    let timestring = parseTime(num)
+    var input = document.getElementById("TextField" + timestring).value;
+    localStorage.setItem(timestring, input);
+    document.getElementById("TextField" + timestring).value = localStorage.getItem(timestring);
+    var testStorage = localStorage.getItem(timestring);
     console.log("input: ", input)
     console.log("testStorage: ", testStorage)
 
+  }
+
+  function parseTime(num) {
+    //Take the number and check to see if it's less than 12 or greater than equal to 12
+    //If less than or equal to 12 return the number with AM next to it
+    //If greater than 12 subtract 12 and return it as a PM
+    //Inside of save btn function 
   }
 
   $("button").click(saveButton)
