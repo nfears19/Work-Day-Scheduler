@@ -8,15 +8,15 @@
   setInterval(renderClock, 1000);
 
   //var TextField9am = ("#TextField9am");
-  var TextField10am = ("#TextField10am");
-  var TextField11am = ("#TextField11am");
-  var TextField12pm = ("#TextField12pm");
-  var TextField1pm = ("#TextField1pm");
-  var TextField2pm = ("#TextField2pm");
-  var TextField3pm = ("#TextField3pm");
-  var TextField4pm = ("#TextField4pm");
-  var TextField5pm = ("#TextField5pm");
-  var saveValue = localStorage.getItem("TextField9am")
+  var TextField10am = ("#TextField10AM");
+  var TextField11am = ("#TextField11AM");
+  var TextField12pm = ("#TextField12PM");
+  var TextField1pm = ("#TextField1PM");
+  var TextField2pm = ("#TextField2PM");
+  var TextField3pm = ("#TextField3PM");
+  var TextField4pm = ("#TextField4PM");
+  var TextField5pm = ("#TextField5PM");
+  var saveValue = localStorage.getItem("TextField9AM")
 
   //The function for the save button
   function saveButton(num) { //Passing a number we're going to use to determine the time
@@ -33,15 +33,23 @@
 
   function parseTime(num) {
     //Take the number and check to see if it's less than 12 or greater than equal to 12
+    if (num <= 12) {
+      console.log("AM")
+      return num + "AM"
+    } else if (num > 12){
+      console.log("PM")
+      return num + "PM"
+    }
+    
     //If less than or equal to 12 return the number with AM next to it
     //If greater than 12 subtract 12 and return it as a PM
-    //Inside of save btn function 
+
   }
 
   $("button").click(saveButton)
   //localStorage.getItem("TextField9am")
   console.log(localStorage.getItem("9AM"))
-  TextField9am.value = localStorage.getItem("9AM")
+  TextField9AM.value = localStorage.getItem("9AM")
 
     //localStorage.setItem("9AM", value);
     //var input = localStorage.getItem("9AM");
