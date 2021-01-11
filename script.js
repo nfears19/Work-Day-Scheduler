@@ -35,10 +35,10 @@
     //Take the number and check to see if it's less than 12 or greater than equal to 12
     if (num <= 12) {
       console.log("AM")
-      return num + "AM"
+      return value;
     } else if (num > 12){
       console.log("PM")
-      return num + "PM"
+      return value;
     }
     
     //If less than or equal to 12 return the number with AM next to it
