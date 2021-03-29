@@ -34,10 +34,12 @@
   function parseTime(num) {
     //Take the number and check to see if it's less than 12 or greater than equal to 12
     if (num <= 12) {
-      console.log("AM")
+      console.log("AM", num)
+      let value = JSON.stringify(num) + 'AM';
       return value;
     } else if (num > 12){
       console.log("PM")
+      let value = JSON.stringify(num) + 'PM';
       return value;
     }
     
@@ -46,10 +48,13 @@
 
   }
 
-  $("button").click(saveButton)
+  //$("button").on('click', saveButton)
   //localStorage.getItem("TextField9am")
   console.log(localStorage.getItem("9AM"))
   TextField9AM.value = localStorage.getItem("9AM")
+  TextField10AM.value = localStorage.getItem("10AM")
+  TextField11AM.value = localStorage.getItem("11AM")
+
 
     //localStorage.setItem("9AM", value);
     //var input = localStorage.getItem("9AM");
